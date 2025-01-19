@@ -1,7 +1,7 @@
 {
   "name": "creating-registration-and-login-form-in-nodejs-and-mongodb",
   "version": "1.0.0",
-  "description": "This is a user login and registration app using Node.js, Express, Mongoose and express-sessions. ",
+  "description": "This is a user login and registration app using Node.js, Express, Mongoose, and express-sessions.",
   "main": "server.js",
   "dependencies": {
     "connect-mongo": "^3.0.0",
@@ -9,39 +9,26 @@
     "ejs": "^3.0.1",
     "express": "^4.17.1",
     "express-session": "^1.16.2",
-    "mongoose": "^5.6.10"
+    "mongoose": "^5.10.9",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "^4.0.3",
+    "react-router-dom": "^5.3.4"
   },
- "dependencies": {
-  "express": "^4.17.1",           // Backend framework
-  "mongoose": "^5.10.9",          // MongoDB library
-  "react": "^17.0.2",             // React library
-  "react-dom": "^17.0.2",         // React DOM
-  "react-scripts": "^4.0.3",      // React build tool
-  "react-router-dom": "^5.3.4",   // Routing for React (latest for React 17)
-  "dotenv": "^8.2.0"              // Environment variable management
-},
-  "devDependencies": {
-    "concurrently": "^6.0.0",
-    "nodemon": "^2.0.6"
-  },
-  "scripts": {
-  "start": "react-scripts start",
-  "build": "react-scripts build",
-  "test": "react-scripts test",
-  "eject": "react-scripts eject"
-},
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "build": "react-scripts build"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/SNEHA-S-J/mern_login_signup.git"
   },
-  "author": "GuruRoxz",
+  "author": "Sneha S J",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/SNEHA-S-J/mern_login_signup.git"
+    "url": "https://github.com/SNEHA-S-J/mern_login_signup/issues"
   },
-  "homepage": "https://github.com/SNEHA-S-J/mern_login_signup.git"
+  "homepage": "https://github.com/SNEHA-S-J/mern_login_signup#readme"
 }
