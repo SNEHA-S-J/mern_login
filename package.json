@@ -11,15 +11,15 @@
     "express-session": "^1.16.2",
     "mongoose": "^5.6.10"
   },
-  "dependencies": {
-    "express": "^4.17.1",
-    "mongoose": "^5.10.9",
-    "react": "^17.0.2",
-  "react-dom": "^17.0.2",
-  "react-scripts": "^4.0.3",
-    "react-router-dom": "^5.1.0",
-    "dotenv": "^8.2.0"
-  },
+ "dependencies": {
+  "express": "^4.17.1",           // Backend framework
+  "mongoose": "^5.10.9",          // MongoDB library
+  "react": "^17.0.2",             // React library
+  "react-dom": "^17.0.2",         // React DOM
+  "react-scripts": "^4.0.3",      // React build tool
+  "react-router-dom": "^5.3.4",   // Routing for React (latest for React 17)
+  "dotenv": "^8.2.0"              // Environment variable management
+},
   "devDependencies": {
     "concurrently": "^6.0.0",
     "nodemon": "^2.0.6"
