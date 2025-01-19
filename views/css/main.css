@@ -1,0 +1,92 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background: #f5f5f5; /* Light gray background for a professional look */
+    color: #1b3a1a; /* Much darker green text color */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url(image2.jpg);
+}
+
+/* Container for content and image */
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    background-color: #fff; /* White background for the entire container */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow */
+}
+
+/* Right content (form or text) */
+.content {
+    flex: 1;
+    padding-right: 20px; /* Space between text and image */
+}
+
+/* Paragraph Styles */
+p {
+    margin-top: 20px;
+    font-size: 40px; /* Much bigger font size */
+    font-weight: bold;
+    color: #1b3a1a; /* Much darker green for text */
+}
+
+/* Input Fields */
+input {
+    text-align: center;
+    width: 80%;
+    max-width: 400px;
+    padding: 15px 20px; /* Larger padding for even bigger inputs */
+    margin: 15px auto;
+    font-size: 24px; /* Even bigger font size */
+    border: 3px solid #1b3a1a; /* Much darker green border */
+    border-radius: 8px;
+    background-color: #fff; /* White background for inputs */
+    color: #333;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Input Hover and Focus */
+input:focus {
+    outline: none;
+    border-color: #0e2613; /* Much darker green on focus */
+    box-shadow: 0px 2px 6px rgba(14, 38, 19, 0.3); /* Darker green shadow */
+}
+
+/* Button Styles */
+button {
+    background: #1b3a1a; /* Much darker green background */
+    color: #fff; /* White text */
+    padding: 15px 30px; /* Larger padding for bigger button */
+    border: none;
+    border-radius: 8px;
+    font-size: 22px; /* Much bigger font size */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+button:hover {
+    background: #0e2613; /* Much darker green on hover */
+    transform: translateY(-2px); /* Lift effect on hover */
+}
+
+button:active {
+    transform: translateY(0);
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2); /* Reduced shadow on click */
+}
+
+/* Footer and Text Alignment */
+footer {
+    margin-top: 20px;
+    font-size: 18px; /* Larger footer text */
+    color: #2a472a; /* Darker grayish-green for footer text */
+}
