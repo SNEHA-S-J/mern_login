@@ -1,35 +1,34 @@
 {
-  "name": "mern-login-frontend",
+  "name": "creating-registration-and-login-form-in-nodejs-and-mongodb",
   "version": "1.0.0",
-  "private": true,
+  "description": "This is a user login and registration app using Node.js, Express, Mongoose, and express-sessions.",
+  "main": "server.js",
   "dependencies": {
+    "connect-mongo": "^3.0.0",
+    "dotenv": "^8.2.0",
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "express-session": "^1.16.2",
+    "mongoose": "^5.10.9",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-router-dom": "^5.3.4",
-    "react-scripts": "^4.0.3"
+    "react-scripts": "^4.0.3",
+    "react-router-dom": "^5.3.4"
   },
+  "devDependencies": {},
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "build": "react-scripts build"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SNEHA-S-J/mern_login_signup.git"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  }
+  "author": "Sneha S J",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SNEHA-S-J/mern_login_signup/issues"
+  },
+  "homepage": "https://github.com/SNEHA-S-J/mern_login_signup#readme"
 }
