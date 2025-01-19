@@ -67,7 +67,9 @@ app.use((err, req, res, next) => {
 });
 
 // Start the server
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 4000;
+
 app.listen(PORT, () => {
   console.log(`Server is started on http://127.0.0.1:${PORT}`);
 });
+
