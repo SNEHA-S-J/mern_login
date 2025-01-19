@@ -1,8 +1,8 @@
 {
-  "name": "creating-registration-and-login-form-in-nodejs-and-mongodb",
+  "name": "mern-login-app",
   "version": "1.0.0",
-  "description": "This is a user login and registration app using Node.js, Express, Mongoose, and express-sessions.",
-  "main": "server.js",
+  "description": "User login and registration app using Node.js, Express, Mongoose, and React.",
+  "main": "server/server.js",
   "dependencies": {
     "connect-mongo": "^3.0.0",
     "dotenv": "^8.2.0",
@@ -18,8 +18,8 @@
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
-    "build": "react-scripts build"
+    "start": "node server/server.js",
+    "build": "cd client && npm install && npm run build"
   },
   "repository": {
     "type": "git",
