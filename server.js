@@ -1,15 +1,14 @@
 // Import required modules
-var express = require('express');
-var dotenv = require('dotenv').config(); // Load environment variables from .env file
-var ejs = require('ejs');
-var path = require('path');
-var bodyParser = require('body-parser');
-var mongoose = require('mongoose');
-var session = require('express-session');
-var MongoStore = require('connect-mongo')(session);
+const express = require('express');
+const dotenv = require('dotenv').config(); // Load environment variables from .env file
+const path = require('path');
+const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
+const session = require('express-session');
+const MongoStore = require('connect-mongo'); // Updated syntax for connect-mongo
 
 // Initialize Express app
-var app = express();
+const app = express();
 
 // MongoDB connection string
 const MONGO_URI = process.env.MONGO_URI || 'mongodb+srv://sneha_007:YJvLR5qGrpKJwLNV@registration.4drno.mongodb.net/';
@@ -18,28 +17,24 @@ const MONGO_URI = process.env.MONGO_URI || 'mongodb+srv://sneha_007:YJvLR5qGrpKJ
 mongoose.connect(MONGO_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true
-}, (err) => {
-  if (!err) {
-    console.log('MongoDB Connection Succeeded.');
-  } else {
-    console.error('Error in DB connection:', err.message);
-  }
-});
-
-var db = mongoose.connection;
-db.on('error', (err) => console.error('MongoDB connection error:', err));
-db.once('open', () => {
-  console.log('MongoDB connection is open.');
-});
+})
+  .then(() => console.log('MongoDB Connection Succeeded.'))
+  .catch(err => console.error('Error in DB connection:', err.message));
 
 // Configure session
 app.use(session({
-  secret: process.env.SESSION_SECRET || 'work hard', // Secret stored in .env for security
+  secret: process.env.SESSION_SECRET || 'work hard', // Use secret from environment variables
   resave: true,
   saveUninitialized: false,
-  store: new MongoStore({
-    mongooseConnection: db
-  })
+  store: MongoStore.create({
+    mongoUrl: MONGO_URI, // Modern syntax for connect-mongo
+    collectionName: 'sessions' // Optional: Customize the session collection name
+  }),
+  cookie: {
+    secure: process.env.NODE_ENV === 'production', // Secure cookies in production
+    httpOnly: true,
+    maxAge: 1000 * 60 * 60 * 24 // 1 day
+  }
 }));
 
 // Middleware for views and static files
@@ -47,15 +42,15 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(express.static(path.join(__dirname, 'views'))); // Use static path for compatibility
+app.use(express.static(path.join(__dirname, 'views'))); // Serve static files from views directory
 
 // Routes
-var index = require('./routes/index');
+const index = require('./routes/index');
 app.use('/', index);
 
 // 404 error handler
 app.use((req, res, next) => {
-  var err = new Error('File Not Found');
+  const err = new Error('File Not Found');
   err.status = 404;
   next(err);
 });
@@ -67,9 +62,7 @@ app.use((err, req, res, next) => {
 });
 
 // Start the server
-const PORT = process.env.PORT || 4000;
-
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-  console.log(`Server is started on http://127.0.0.1:${PORT}`);
+  console.log(`Server is running on http://127.0.0.1:${PORT}`);
 });
-
